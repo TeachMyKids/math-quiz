@@ -145,20 +145,14 @@ module.exports = function () {
   }
 
   const appVendors = [
-    'babel-polyfill',
-    'jquery',
-    'bootstrap/dist/js/bootstrap.min.js',
-    '@fancyapps/fancybox/dist/jquery.fancybox.js'
+    'babel-polyfill'
   ];
 
   const appEntry = {
     vendor: appVendors,
     app: [
       'base/index.js',
-      'base/libs/main.js',
       'font-awesome/less/font-awesome.less',
-      'bootstrap/dist/css/bootstrap.min.css',
-      '@fancyapps/fancybox/dist/jquery.fancybox.css',
       './src/App.css',
       './public/css/styles.css'
     ]
@@ -172,7 +166,6 @@ module.exports = function () {
       components: path.resolve(__dirname, './src/components/'),
       pages: path.resolve(__dirname, './src/pages/'),
       assets: path.resolve(__dirname, './src/assets/'),
-      jquery: `${path.resolve(__dirname, 'node_modules')}/jquery/src/jquery.js`,
       slick: path.resolve(__dirname, './node_modules/slick-carousel/slick'),
       'rc-slider': path.resolve(__dirname, './node_modules/rc-slider/lib'),
       'react-collapse': path.resolve(__dirname, './node_modules/react-collapse/lib'),
@@ -274,12 +267,6 @@ module.exports = function () {
       new HtmlWebpackPlugin({
         template: path.resolve('./src/', 'index.production.html'),
         favicon: path.join('src/assets/images', 'favicon.ico')
-      }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Tether: 'tether'
       }),
       new ManifestPlugin()
     ],
