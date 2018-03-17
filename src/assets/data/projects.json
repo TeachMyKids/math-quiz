@@ -1,0 +1,52 @@
+[
+	{
+		"title": "Snappy Spanish",
+		"description": "iOS application for learning spanish",
+		"tags": "iOS, Core Data, AVFoundation",
+		"url": null,
+		"thumbnail": "snappy001.jpg",
+		"gallery": [
+			"snappy001.jpg",
+			"snappy002.png",
+			"snappy003.jpg",
+			"snappy004.jpg"
+		]
+	},
+	{
+		"title": "Alfa",
+		"description": "",
+		"tags": "Laravel",
+		"url": "http://alfa.com.co",
+		"thumbnail": "alfa001.png",
+		"gallery": [
+			"alfa001.png",
+			"alfa002.png",
+			"alfa003.png"
+		]
+	},
+	{
+		"title": "Ford Consumer Experience",
+		"description": "",
+		"tags": "Laravel, Angular, cordova",
+		"url": "http://miguiaford.com.co",
+		"thumbnail": "fordconsumer001.png",
+		"gallery": [
+			"fordconsumer001.png",
+			"fordconsumer002.png",
+			"fordconsumer003.png",
+			"fordconsumer004.png"
+		]
+	},
+	{
+		"title": "EURunners",
+		"description": "iOS application designed for runners in Venezuela",
+		"tags": "iOS, SQLite, Objective-C",
+		"url": "https://itunes.apple.com/us/app/eurunners/id983067889",
+		"thumbnail": "eurunners001.jpeg",
+		"gallery": [
+			"eurunners001.jpeg",
+			"eurunners002.jpeg",
+			"eurunners003.jpeg"
+		]
+	}
+]

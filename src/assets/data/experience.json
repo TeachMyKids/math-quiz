@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Project Team Lead",
+    "company": "Bee Concept Solutions",
+    "location": "Caracas, Venezuela",
+    "period": {
+      "from": "July 2015",
+      "to": null
+    },
+    "description": [
+      "Working with other key members on projects to come up with the goals, objectives and achieve the milestones.",
+      "Play a key role in constantly improving best practices, coding conventions and adoption of tools or technologies.",
+      "Tutoring 3-5 junior and senior developers to ensure software quality and keep projects on schedule."
+    ]
+  },
+  {
+    "title": "Senior Developer",
+    "company": "Bee Concept Solutions",
+    "location": "Caracas, Venezuela",
+    "period": {
+      "from": "August 2013",
+      "to": "June 2015"
+    },
+    "description": [
+      "As a Senior Developer, I worked as a web and mobile developer for the company, creating a codebase for common problems and documenting recurring scenarios.",
+      "Most of the web projects are created using CakePHP or laravel framework and the mobile projects are native implementations in XCode (iOS) and Eclipse / Android Studio (Android) or hybrid applications using phonegap and ionic."
+    ]
+  },
+  {
+    "title": "Senior Developer",
+    "company": "Nova Tecnologia Creativa",
+    "location": "Caracas, Venezuela",
+    "period": {
+      "from": "June 2011",
+      "to": "August 2013"
+    },
+    "description": [
+      "Create user information solutions by developing, implementing, and maintaining Internet/intranet/mobile applications using different technologies.",
+      "Develop applications by coordinating requirements, schedules, and activities; contributing to team meetings; troubleshooting development and production problems across multiple environments and operating platforms.",
+      "Supports and develops web application developers by providing advice, coaching and educational opportunities."
+    ]
+  }
+]
