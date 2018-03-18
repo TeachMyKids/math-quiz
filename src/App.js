@@ -1,89 +1,56 @@
-import React, { Component } from 'react';
-// import Bio from './components/bio';
-import Sidebar from './components/sidebar';
-import Summary from './components/summary';
-import Skills from './components/skills';
-import Experience from './components/experience';
-import Projects from './components/projects';
-import { updateBars, updateGallery } from 'libs/main';
+import React from 'react';
+import { MathContainer } from 'components';
+import ReduxToastr, { reducer as toastrReducer } from 'react-redux-toastr';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
-class App extends Component {
+const reducers = {
+  toastr: toastrReducer
+};
+
+const reducer = combineReducers(reducers);
+const store = createStore(reducer);
+
+class App extends React.Component {
   constructor(props) {
     super();
     this.props = props;
+
+    let data = [];
+    for (let i = 2; i <= 5; i++) {
+      for (let j = 1; j <= 10; j++) {
+        data.push([i, 'x', j, i * j]);
+      }
+    }
+
+    for (let i = 2; i <= 5; i++) {
+      for (let j = 1; j <= 10; j++) {
+        data.push([i * j, ':', i, j]);
+      }
+    }
+
     this.state = {
-      profile: {
-        skills: []
-      },
-      experience: [],
-      projects: []
+      data
     };
   }
 
-  fixWindow() {
-    $('.level-bar-inner').css('width', '0');
-    $(window).on('load', function () {
-      updateBars();
-      updateGallery();
-    });
-  }
-
-  componentDidMount() {
-    this.fetchProfile();
-    this.fetchExperience();
-    this.fetchProjects();
-
-    this.fixWindow();
-  }
-
-  fetchProfile() {
-    fetch('data/profile.json')
-      .then(response => response.json())
-      .then((json) => {
-        console.log('got the profile!');
-        console.log(json);
-        this.setState({
-          profile: json
-        });
-      });
-  }
-
-  fetchExperience() {
-    fetch('data/experience.json')
-      .then(response => response.json())
-      .then((json) => {
-        console.log('got the experience!');
-        console.log(json);
-        this.setState({
-          experience: json
-        });
-      });
-  }
-
-  fetchProjects() {
-    fetch('data/projects.json')
-      .then(response => response.json())
-      .then((json) => {
-        console.log('got the projects!');
-        console.log(json);
-        this.setState({
-          projects: json
-        });
-      });
-  }
-
   render() {
-    console.log('App::render()');
     return (
-      <div className="wrapper">
-        <Sidebar profile={this.state.profile} />
-        <div className="main-wrapper">
-          <Summary profile={this.state.profile} />
-          <Experience positions={this.state.experience} />
-          <Skills skills={this.state.profile.skills} />
-          <Projects projects={this.state.projects} />
+      <Provider store={store}>
+        <div className="wrapper">
+          <ReduxToastr
+            timeOut={4000}
+            newestOnTop={false}
+            preventDuplicates
+            position="top-left"
+            transitionIn="fadeIn"
+            transitionOut="fadeOut"
+            progressBar
+          />
+
+          <MathContainer data={this.state.data} />
         </div>
-      </div>
+      </Provider>
     );
   }
 }

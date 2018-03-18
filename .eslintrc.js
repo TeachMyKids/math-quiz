@@ -18,6 +18,7 @@ module.exports = {
     "prefer-arrow-callback": 0,
     "func-names": 0,
     "import/no-extraneous-dependencies": 0,
+    "import/extensions": [2, { "js": "never", "jsx": "always" }],
     "no-underscore-dangle": 0,
     "no-unused-expressions": 0,
     "no-use-before-define": 0,

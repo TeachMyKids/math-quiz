@@ -10,16 +10,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let {
   NODE_ENV,
-  PORT,
-  API_URL
+  PORT
 } = process.env;
 
 if (!PORT) {
   PORT = config.PORT;
-}
-
-if (!API_URL) {
-  API_URL = config.API_URL;
 }
 
 const sourcePath = path.join(__dirname, './');
@@ -107,9 +102,7 @@ module.exports = function () {
   const isProd = NODE_ENV === 'production';
 
   const envars = {
-    NODE_ENV: JSON.stringify(NODE_ENV),
-    API_URL: JSON.stringify(API_URL),
-    PORT: JSON.stringify(PORT)
+    NODE_ENV: JSON.stringify(NODE_ENV)
   };
 
   const plugins = [
@@ -121,8 +114,8 @@ module.exports = function () {
       filename: (isProd ? '[hash]-docs.css' : 'docs.css'), allChunks: true
     }),
     new CopyWebpackPlugin([
-      { from: './public/images', to: './images' },
-      { from: './src/assets/data', to: './data' }
+      // { from: './public/images', to: './images' },
+      // { from: './src/assets/data', to: './data' }
     ]),
     new webpack.NamedModulesPlugin()
   ];
@@ -154,7 +147,7 @@ module.exports = function () {
       'base/index.js',
       'font-awesome/less/font-awesome.less',
       './src/App.css',
-      './public/css/styles.css'
+      'react-redux-toastr/src/styles/index.scss'
     ]
   };
 
